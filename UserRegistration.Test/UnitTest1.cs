@@ -10,8 +10,8 @@ namespace UserRegistration.Test
         public void Check_If_User_Added_Is_Unique()
         {
             // Arrange
-            var user1 = new UserRegistration.classes.User("Josef", "12@34567a", "test@Gmail.com");
-            var user2 = new UserRegistration.classes.User("Josef", "12@34567a", "test@Gmail.com");
+            var user1 = new UserRegistration.classes.User("Luffy", "12@34567a", "test@Gmail.com");
+            var user2 = new UserRegistration.classes.User("Luffy", "12@34567a", "test@Gmail.com");
             var userBank = new UserRegistration.classes.UserBank();
 
             // Act
@@ -38,7 +38,7 @@ namespace UserRegistration.Test
         public void Check_If_User_Has_Right_Formatting_For_Email()
         {
             // Arrange & Act
-            var exception = Assert.ThrowsException<ArgumentException>(() => new UserRegistration.classes.User("Josef", "12345@67aa", "DåligEmail"));
+            var exception = Assert.ThrowsException<ArgumentException>(() => new UserRegistration.classes.User("Luffy", "12345@67aa", "DåligEmail"));
 
             // Assert
             Assert.AreEqual("Email must not be null and must end with '@Gmail.com'.", exception.Message);
@@ -49,7 +49,7 @@ namespace UserRegistration.Test
         {
             // Act
             var userbank = new UserRegistration.classes.UserBank();
-            var user = new UserRegistration.classes.User("UserTest", "Jagheterst@efan1", "Stefan.kureljusic@Gmail.com");
+            var user = new UserRegistration.classes.User("UserTest", "JagheterSan@ji1", "Sanji.Onepiece@Gmail.com");
 
             // Arrange
             string success = userbank.AddUser(user);
@@ -68,7 +68,7 @@ namespace UserRegistration.Test
             var userbank = new UserRegistration.classes.UserBank();
 
             // Act and Arrange
-            var exception = Assert.ThrowsException<ArgumentException>(() => new UserRegistration.classes.User("Josef", password, "stefan@Gmail.com"));
+            var exception = Assert.ThrowsException<ArgumentException>(() => new UserRegistration.classes.User("Luffy", password, "Sanji.Onepiece@Gmail.com"));
 
             // Assert
             Assert.AreEqual("Password length must be at least 8 characters and contain at least one special character.", exception.Message);
